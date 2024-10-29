@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Different string interpretations",
+  "type": "object",
+  "properties": {
+    "strings": {
+      "title": "Some free Strings",
+      "type": "object",
+      "properties": {
+        "simple": {
+          "type": "string"
+        },
+        "enum": {
+          "type": "string",
+          "enum": ["option-1", "option-2", "option-3", "option-4"]
+        }
+      }
+    },
+    "constraint strings": {
+      "title": "Secret Strings",
+      "type": "object",
+      "properties": {
+        "password": {
+          "type": "string",
+          "writeOnly": true
+        },
+        "hostname": {
+          "type": "string",
+          "pattern": "^[a-zA-Z]+$"
+        },
+        "number": {
+          "type": "number"
+        }
+      }
+    },
+    "datetime": {
+      "title": "Date and Time Strings",
+      "type": "object",
+      "properties": {
+        "datetime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "time": {
+          "type": "string",
+          "format": "time"
+        }
+      }
+    },
+    "nested": {
+      "title": "Nested Strings",
+      "type": "object",
+      "properties": {
+        "list": {
+          "title": "List of String (Tags)",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Object of String (Key-Value pairs)": {
+          "title": "Object of String (Key-Value pairs)",
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

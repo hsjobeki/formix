@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+  @apply text-blue-800 text-2xl
+}
+h2 {
+  @apply text-blue-800 text-xl
+}
+h2 {
+  @apply text-blue-900 text-lg
+}
+
+.preview {
+	background-image: repeating-linear-gradient(45deg,var(--fallback-b1,oklch(var(--b1))),var(--fallback-b1,oklch(var(--b1))) 13px,var(--fallback-b2,oklch(var(--b2))) 13px,var(--fallback-b2,oklch(var(--b2))) 14px);
+	background-size: 40px 40px;
+}

@@ -1,0 +1,37 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "destinations": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "default": "\u2039name\u203a",
+            "description": "the name of the backup job",
+            "type": "string"
+          },
+          "repo": {
+            "description": "the borgbackup repository to backup to",
+            "type": "string"
+          }
+        },
+        "required": ["repo"],
+        "type": "object"
+      },
+      "default": {},
+      "description": "destinations where the machine should be backuped to\n",
+      "type": "object"
+    },
+    "exclude": {
+      "default": [],
+      "description": "Directories/Files to exclude from the backup.\nUse * as a wildcard.\n",
+      "examples": ["*.pyc"],
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "type": "object",
+  "title": "borgbackup-config-role-client"
+}
