@@ -1,34 +1,101 @@
-## Usage
+# Formix
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+**Formix** is an opinionated, modular, and highly customizable library for rendering JSON schema into beautifully styled and functional form elements.
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+Designed specifically for **Solid.js** with suppport for [**NixOS**](https://nixos.wiki/wiki/NixOS_modules) and [**Clan modules**](https://docs.clan.lol/reference/clanModules/). Formix makes it easy to build complex forms from JSON schema with effortless configuration and customization.
+
+## Features
+
+- **Modular and Configurable**: Easily configure form elements to suit a variety of use cases.
+- **Solid.js Integration**: Built with Solid.js at its core for reactive, high-performance forms.
+- **NixOS Friendly**: Meant to be a UI building block for NixOS System configurations.
+- **Highly User friendly**: Tackles common UX challenges by offering a high level of customizability ranging from NixOS Module meta configuration to custom UI Components.
+
+## Installation
+
+Install **Formix** through npm:
 
 ```bash
-$ npm install # or pnpm install or yarn install
+npm install formix
 ```
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+## Quick Start
 
-## Available Scripts
+Here's a quick example to get you up and running with **Formix**.
 
-In the project directory, you can run:
+```jsx
+import { Formix } from "formix";
+import { jsonSchema } from "./your-schema";
 
-### `npm run dev` or `npm start`
+function App() {
+  return (
+    <div>
+      <h1>Example Form</h1>
+      <Formix schema={jsonSchema} />
+    </div>
+  );
+}
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+export default App;
+```
 
-The page will reload if you make edits.<br>
+### JSON Schema Example
 
-### `npm run build`
+```json
+{
+  "title": "User Registration",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email"
+    },
+    "password": {
+      "type": "string",
+      "format": "password",
+      "title": "Password"
+    }
+  },
+  "required": ["name", "email", "password"]
+}
+```
 
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
+## Configuration and Customization
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Formix offers several ways to configure and customize forms:
 
-## Deployment
+- **Schema Modularity**: Build and combine schema parts for complex forms.
+- **Custom Components**: Replace default form elements with custom components.
+- **Styling**: Compatible with various CSS frameworks or your own custom styling.
 
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+```jsx
+<Formix
+  schema={jsonSchema}
+  config={{
+    theme: "your-theme-class",
+    customComponents: {
+      input: CustomInput,
+      select: CustomSelect,
+    },
+  }}
+/>
+```
+
+## Documentation
+
+Explore the full documentation [here](https://your-documentation-link.com) for detailed information on advanced usage, configuration, and NixOS module integration.
+
+## Contributing
+
+Contributions are welcome! Please read the [contributing guide](CONTRIBUTING.md) to get started.
+
+## License
+
+MIT License. See [LICENSE](LICENSE) for more information.
+
+---

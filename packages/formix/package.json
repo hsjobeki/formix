@@ -1,0 +1,45 @@
+{
+  "name": "formix",
+  "version": "0.0.0",
+  "description": "Jsonschema form rendering opinionated for NixOS",
+  "scripts": {
+    "dev": "vite",
+    "build": "rm -rf dist && tsup && tsc --project tsconfig.build.json --emitDeclarationOnly"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.module.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.module.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modular-forms/solid": "^0.24.1",
+    "@types/json-schema": "^7.0.15"
+  },
+  "devDependencies": {
+    "@tanstack/solid-query": "^5.59.13",
+    "@types/node": "^22.7.9",
+    "autoprefixer": "^10.4.20",
+    "classnames": "^2.5.1",
+    "daisyui": "^4.12.13",
+    "postcss": "^8.4.47",
+    "solid-devtools": "^0.29.3",
+    "tailwindcss": "^3.4.14",
+    "tsup": "^8.3.5",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.11",
+    "vite-plugin-solid": "^2.8.2"
+  },
+  "peerDependencies": {
+    "solid-js": ">=1.6"
+  }
+}

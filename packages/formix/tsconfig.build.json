@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "declarationDir": "dist",
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true
+  },
+  "files": ["./src/index.ts"],
+}

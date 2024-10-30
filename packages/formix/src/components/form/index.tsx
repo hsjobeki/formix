@@ -384,7 +384,7 @@ export function ArrayFields<T extends FieldValues, R extends ResponseData>(
                     of={props.formStore}
                     validateOn="touched"
                     revalidateOn="touched"
-                    validate={(items) => {
+                    validate={() => {
                       let error = "";
                       // @ts-ignore
                       const values: any[] = getValues(
@@ -471,6 +471,7 @@ export function ArrayFields<T extends FieldValues, R extends ResponseData>(
                           }}
                           // Add the new item to the FieldArray
                           handleSubmit={(values, event) => {
+                            // @ts-ignore
                             const prev: any[] = getValues(
                               props.formStore,
                               // @ts-ignore

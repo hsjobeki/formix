@@ -56,7 +56,7 @@ const App: Component = () => {
                     after: <button class="btn">Submit</button>,
                   }}
                   handleSubmit={(values, event) => {
-                    console.log(values["complex-items"]);
+                    console.log(values);
                   }}
                 ></Form>
                 {/* <FormSection>
